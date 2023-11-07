@@ -1,19 +1,17 @@
 import * as React from 'react'
-import { Menu } from './navbar'
+import { Menu } from './components/navbar'
 
-import './App.css'
+import './style/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
   return (
     <div className='App'>
-<header id="header">
-    <Menu />
-    </header>
-    
+      <header id="header">
+        <Menu />
+      </header>
     </div>
-
   )
 }
 
