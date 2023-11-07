@@ -13,22 +13,22 @@ export const Menu = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand className="fs-3" href="#home">Mr. Shop</Navbar.Brand>
+        <Navbar.Brand className="fs-3">Mr. Shop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="mx-4" href="#home">Home</Nav.Link>
-            <Nav.Link className="mx-4" href="#link">Shops</Nav.Link>
-            <Nav.Link className="mx-4" href="#link">Offers</Nav.Link>
+            <Nav.Link className="mx-4">Home</Nav.Link>
+            <Nav.Link className="mx-4">Shops</Nav.Link>
+            <Nav.Link className="mx-4">Offers</Nav.Link>
             <NavDropdown title="Products" id="basic-nav-dropdown" className="mx-4">
-              <NavDropdown.Item href="#action/3.1">Men's Fashion</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item>Men's Fashion</NavDropdown.Item>
+              <NavDropdown.Item>
                 Women's Fashion
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Beuty</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Health</NavDropdown.Item>
+              <NavDropdown.Item >Beuty</NavDropdown.Item>
+              <NavDropdown.Item >Health</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item>
                 Outlet
               </NavDropdown.Item>
             </NavDropdown>
