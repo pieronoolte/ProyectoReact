@@ -11,7 +11,7 @@ export const ItemDetailContainer = () => {
 
     const TraerDatosProductos = async () => {
         try {
-            const response = await fetch('../public/products.json',
+            const response = await fetch('../products.json',
                 {
                     headers : { 
                         'Content-Type': 'application/json',
@@ -31,11 +31,6 @@ export const ItemDetailContainer = () => {
     useEffect(() => {
         TraerDatosProductos()
     }, [])
-
-
-
-
-
 
     return (
         <div className='d-flex flex-wrap'>
