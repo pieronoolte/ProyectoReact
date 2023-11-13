@@ -1,10 +1,12 @@
 import React from 'react'
+import { CartWidget } from './cartwidget';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,7 +15,7 @@ export const Menu = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand className="fs-3">Mr. Shop</Navbar.Brand>
+        <Navbar.Brand className="fs-3 text-danger">Mr. Burger</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -33,16 +35,13 @@ export const Menu = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Item className="mx-4" >
-            <Form.Control type="text" placeholder="Search..." />
+              <Form.Control type="text" placeholder="Search..." />
             </Nav.Item>
-            <Nav.Item className="mx-4">
-              <Button variant="secondary">Search</Button>{' '}
-            </Nav.Item>
+            <CartWidget />
           </Nav>
         </Navbar.Collapse>
 
       </Container>
     </Navbar>
-
   )
 }

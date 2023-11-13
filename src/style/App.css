@@ -4,18 +4,22 @@
   padding: 2rem;
   text-align: center;
 }
-#header{
+
+#header {
   width: 90%;
 }
+
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -24,6 +28,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -41,4 +46,28 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.cart__count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20%;
+  box-shadow: none;
+  position: absolute;
+  top: 40%;
+  right: 6.5%;
+  color: #6c757d;
+  width: 20px;
+  height: 20px;
+}
+
+.cart__countproducts {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.logo__burger{
+  color: #dc3545;
 }
