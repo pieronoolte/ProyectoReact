@@ -11,7 +11,7 @@ export const ItemDetailContainer = () => {
 
     const TraerDatosProductos = async () => {
         try {
-            const response = await fetch("products.json");
+            const response = await fetch("../products.json");
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
