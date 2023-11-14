@@ -40,7 +40,7 @@ export const ItemDetailContainer = () => {
         <div className='d-flex flex-wrap'>
             {products.map(e =>
                 <Card id={e.id} key={e.id} style={{ width: '18rem' }} className='bg-body-tertiary m-4'>
-                    <Card.Img variant="top" style={{ width: '14rem' }} src={`./src/assets/image${e.id}.png`} />
+                    <Card.Img variant="top" style={{ width: '14rem' }} src={`/src/assets/image${e.id}.png`} />
                     <Card.Body>
                         <Card.Title className='text-black font-weight-bold'>{e.name}</Card.Title>
                         <Card.Title className='m-3'>$ {e.price}</Card.Title>
