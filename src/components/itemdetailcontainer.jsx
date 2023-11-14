@@ -11,13 +11,13 @@ export const ItemDetailContainer = () => {
 
     const TraerDatosProductos = async () => {
         try {
-            const response = await fetch('/products.json',
-                {
-                    headers : { 
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                       }
-            });
+            const response = await fetch("../products.json")
+            //     {
+            //         headers : { 
+            //             'Content-Type': 'application/json',
+            //             'Accept': 'application/json'
+            //            }
+            // });
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
