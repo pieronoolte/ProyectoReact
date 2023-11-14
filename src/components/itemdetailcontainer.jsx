@@ -2,37 +2,40 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import { json } from './product'
 
 
 export const ItemDetailContainer = () => {
 
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-    const TraerDatosProductos = async () => {
-        try {
-            const response = await fetch('/products.json')
-            //     {
-            //         headers : { 
-            //             'Content-Type': 'application/json',
-            //             'Accept': 'application/json'
-            //            }
-            // });
-            if (response.ok) {
-                const data = await response.json();
-                console.log(data);
-                setProducts(data);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    // useEffect(() => {
+    // const TraerDatosProductos = async () => {
+    //     try {
+    //         const response = await fetch('products.json')
+    //         //     {
+    //         //         headers : { 
+    //         //             'Content-Type': 'application/json',
+    //         //             'Accept': 'application/json'
+    //         //            }
+    //         // });
+    //         if (response.ok) {
+    //             const data = await response.json();
+    //             console.log(data);
+    //             setProducts(data);
+    //         }
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
+    //     TraerDatosProductos();
+    // }, [])
     
-        TraerDatosProductos();
-    }, [])
-
+    useEffect(()=>{const updateArray = json.map(item => item);
+        setProducts(updateArray);
+    },[])
+    
     return (
         <div className='d-flex flex-wrap'>
             {products.map(e =>
