@@ -7,11 +7,12 @@ import Card from 'react-bootstrap/Card';
 
 export const ItemDetailContainer = () => {
 
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
 
+    useEffect(() => {
     const TraerDatosProductos = async () => {
         try {
-            const response = await fetch("../products.json")
+            const response = await fetch('/products.json')
             //     {
             //         headers : { 
             //             'Content-Type': 'application/json',
@@ -28,8 +29,8 @@ export const ItemDetailContainer = () => {
         }
     }
 
-    useEffect(() => {
-        TraerDatosProductos()
+    
+        TraerDatosProductos();
     }, [])
 
     return (
