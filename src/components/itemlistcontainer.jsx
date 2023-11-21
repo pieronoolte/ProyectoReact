@@ -1,7 +1,19 @@
 import React from 'react'
+import { ItemList } from './ItemList';
+import { useParams } from 'react-router-dom';
+import { ItemCarousel } from './Carousel';
+import { useProduct } from '../hooks/useProduct';
 
-export const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = () => {
+
+  const { category } = useParams()
+  const { products, hidden } = useProduct(true, category)
+
   return (
-    <h2 className='m-5 text-danger shadow-lg rounded p-2 bg-body-tertiary'>{greeting}</h2>
+    <>
+      <ItemCarousel dnone={hidden} />
+      <ItemList listProducts={products} />
+    </>
+
   )
 }

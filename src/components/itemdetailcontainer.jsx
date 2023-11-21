@@ -1,56 +1,58 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
+import React, {useContext,useEffect} from 'react'
+import { Item } from './Item'
+import { AccordionDetail } from './AccordionDetail';
+import { useProduct } from '../hooks/useProduct'
+import { useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import { json } from './product'
+import { CartContext } from '../context/CartContext';
+import { useElement } from '../hooks/useElement';
 
 
 export const ItemDetailContainer = () => {
 
-    const [products, setProducts] = useState([]);
+  const { id } = useParams()
+  const { product } = useProduct(false, id)
+  const {addShopping, updateTotal} = useContext(CartContext);
+  const {updateElementState, elementStates} = useElement()
 
-    // useEffect(() => {
-    // const TraerDatosProductos = async () => {
-    //     try {
-    //         const response = await fetch('products.json')
-    //         //     {
-    //         //         headers : { 
-    //         //             'Content-Type': 'application/json',
-    //         //             'Accept': 'application/json'
-    //         //            }
-    //         // });
-    //         if (response.ok) {
-    //             const data = await response.json();
-    //             console.log(data);
-    //             setProducts(data);
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+  // const [elementStates, setElementStates] = useState({});
+  // const updateElementState = (id, newState) => {
+  //   setElementStates((prevStates) => ({
+  //     ...prevStates,
+  //     [id]: newState,
+  //   }));
+  //   console.log(elementStates[product.id])
+  // };
+// useEffect(() => {
 
-    //     TraerDatosProductos();
-    // }, [])
-    
-    useEffect(()=>{const updateArray = json.map(item => item);
-        setProducts(updateArray);
-    },[])
-    
-    return (
-        <div className='d-flex flex-wrap'>
-            {products.map(e =>
-                <Card id={e.id} key={e.id} style={{ width: '18rem' }} className='bg-body-tertiary m-4'>
-                    <Card.Img variant="top" style={{ width: '14rem' }} src={`/image${e.id}.png`} />
-                    <Card.Body>
-                        <Card.Title className='text-black font-weight-bold'>{e.name}</Card.Title>
-                        <Card.Title className='m-3'>$ {e.price}</Card.Title>
+// setTotal((product.price * (elementStates[product.id] || 1.0)).toFixed(2))
+// }, [elementStates])
 
-                        <Button className='px-4 mt-2' variant="danger">Ver mas</Button>
-                    </Card.Body>
-                </Card>
-            )}
+  return (
+    <div className='container'>
+      <div className='row'>
+
+        <Item id={product.id} title={product.name} price={product.price} hiddenFirst={"d-none"} hiddenSecond={""} value={(newState)=>updateElementState(product.id,newState)}/>
+
+        <div className='col-8 my-4'>
+          <div className='border border-2 bg-body-tertiary m-5 p-2 rounded' >{product.content}</div>
+          <AccordionDetail />
+          <Button 
+          type="button" 
+          className='ms-5 my-3 fs-5 d-flex flex-row px-2' 
+          variant="danger" 
+          onClick={() => {
+            addShopping(product)
+            updateTotal((product.price * (elementStates[product.id] || 1.0)).toFixed(2))
+          }}
+          >
+            <p className='m-1'>AGREGAR A TU PEDIDO</p>
+            <span className='m-1'>{ `$${(product.price * (elementStates[product.id] || 1.0)).toFixed(2)}`}</span>
+            </Button>
         </div>
-    )
+
+      </div>
+    </div>
+
+  )
 }
-
-
