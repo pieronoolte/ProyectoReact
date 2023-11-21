@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-
-export const ItemCarousel = ({dnone}) => {
+import { Link } from 'react-router-dom';
+export const ItemCarousel = ({ dnone }) => {
   const [index, setIndex] = useState(0)
 
   const handleSelect = (selectedIndex) => {
@@ -10,15 +10,23 @@ export const ItemCarousel = ({dnone}) => {
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect} className={`m-2 my-4 ${dnone}`}>
+
       <Carousel.Item>
-        <img src={`/imageCarousel1.png`} />
+        <Link to={`/item/24`}>
+          <img src={`/imageCarousel1.png`} />
+        </Link>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={`/imageCarousel2.png`} />
+        <Link to={`/item/1`}>
+          <img src={`/imageCarousel2.png`} />
+        </Link>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={`/imageCarousel3.png`} />
+        <Link to={`/item/25`}>
+          <img src={`/imageCarousel3.png`} />
+        </Link>
       </Carousel.Item>
+      
     </Carousel>
   );
 }

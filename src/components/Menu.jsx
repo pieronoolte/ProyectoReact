@@ -35,7 +35,7 @@ export const Menu = () => {
               <Link  className="text-secondary" to={'/category/category3'}> Las vegetales </Link>
               </NavDropdown.Item>
               <NavDropdown.Item >
-              <Link  className="text-secondary" to={'/category/category4'}> Las clasicas </Link>
+              <Link  className="text-secondary" to={'/category/category4'}> Las de Pollo</Link>
               </NavDropdown.Item>
               <NavDropdown.Item >
               <Link  className="text-secondary" to={'/category/category5'}> Promo para dos </Link>

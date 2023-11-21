@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { ItemCount } from './ItemCount'
 import { useElement } from '../hooks/useElement';
 
+
 export const Item = ({ id, title, price, hiddenFirst, hiddenSecond, value=useElement}) => {
   return (
     <Card id={id} key={id} style={{ width: '18rem', height: '30.5rem' }} className='bg-body-tertiary m-4'>

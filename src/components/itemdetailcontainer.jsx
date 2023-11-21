@@ -15,18 +15,6 @@ export const ItemDetailContainer = () => {
   const {addShopping, updateTotal} = useContext(CartContext);
   const {updateElementState, elementStates} = useElement()
 
-  // const [elementStates, setElementStates] = useState({});
-  // const updateElementState = (id, newState) => {
-  //   setElementStates((prevStates) => ({
-  //     ...prevStates,
-  //     [id]: newState,
-  //   }));
-  //   console.log(elementStates[product.id])
-  // };
-// useEffect(() => {
-
-// setTotal((product.price * (elementStates[product.id] || 1.0)).toFixed(2))
-// }, [elementStates])
 
   return (
     <div className='container'>
@@ -35,7 +23,8 @@ export const ItemDetailContainer = () => {
         <Item id={product.id} title={product.name} price={product.price} hiddenFirst={"d-none"} hiddenSecond={""} value={(newState)=>updateElementState(product.id,newState)}/>
 
         <div className='col-8 my-4'>
-          <div className='border border-2 bg-body-tertiary m-5 p-2 rounded' >{product.content}</div>
+          <div className='text-start ms-5 fw-bold'>Descripción:</div>
+          <div className='border border-2 bg-body-tertiary mb-5 mx-5 mt-2 p-2 rounded' >{product.content}</div>
           <AccordionDetail />
           <Button 
           type="button" 
