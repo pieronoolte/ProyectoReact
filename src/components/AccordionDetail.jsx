@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
 import { ItemCount } from './ItemCount'
 
+
 export const AccordionDetail = () => {
   return (
     <Accordion className='m-5'>
