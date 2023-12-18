@@ -11,7 +11,8 @@ export const ItemList = ({listProducts}) => {
                     id={e.id} 
                     title={e.name} 
                     price={e.price} 
-                    hiddenFirst={""} 
+                    hiddenFirst={""}
+                    img={e.img}
                     hiddenSecond={"d-none"}
                     />
             )}

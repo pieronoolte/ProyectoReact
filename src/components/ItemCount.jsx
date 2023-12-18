@@ -2,18 +2,18 @@ import React from 'react'
 import { useCount } from '../hooks/useCount'
 import Button from 'react-bootstrap/Button';
 
-export const ItemCount = ({sendInfo}) => {
+export const ItemCount = ({sendInfo,max}) => {
   
-const {decrement, increment, count}=useCount(1,0,10)
+const {decrement, increment, count}=useCount(1,1,max)
 
 const handleClickIncrement = () => {
+  if(count <= (max-1) ) sendInfo(count+1)
   increment()
-  sendInfo(count+1)
 }
 
 const handleClickDecrement = () => {
-  decrement()
   sendInfo(count-1)
+  decrement()
 }
 
   return (

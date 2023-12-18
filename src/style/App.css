@@ -71,3 +71,17 @@
 .logo__burger{
   color: #dc3545;
 }
+
+.spinner__burger {
+  color: #dc3545;
+  font-size: 400%;
+}
+
+.nav__category {
+  color: inherit;
+}
+
+.nav__category:hover {
+      color: #f8f9fa;
+  }
+

@@ -1,32 +1,13 @@
-// import { json } from '../components/product';
 import { useEffect, useState } from 'react';
-
-
-
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, query, orderBy } from "firebase/firestore"
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyAdLYgDmf5Ci1WFMdDOZ73fTzH4xQTXDbo",
-    authDomain: "bd-rect.firebaseapp.com",
-    projectId: "bd-rect",
-    storageBucket: "bd-rect.appspot.com",
-    messagingSenderId: "565953072638",
-    appId: "1:565953072638:web:a5a3a0bf0e83aa163504af"
-
-};
-
-const firebaseAp = initializeApp(firebaseConfig);
-const db = getFirestore(firebaseAp);
-
+import { collection, getDocs, query, orderBy } from "firebase/firestore"
+import {firebase} from './useFirebase'
 
 export const useProduct = (useHook, param) => {
-
 
     const [product, setProduct] = useState([]);
     const [products, setProducts] = useState([]);
     const [hidden, setHidden] = useState("");
+    const {db} = firebase()
 
     useEffect(() => {
 
@@ -39,6 +20,7 @@ export const useProduct = (useHook, param) => {
                     content: doc.data().content,
                     price: doc.data().price,
                     category: doc.data().category,
+                    img: doc.data().img
                 }));
                 console.log(json)
 

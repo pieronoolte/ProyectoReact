@@ -69,27 +69,27 @@ export const AccordionDetail = () => {
               <Accordion.Body className='bg-body-tertiary'>
                 <div className='d-flex flex-row justify-content-between'>
                   <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Mayonesa</div>
-                  <ItemCount />
+                  <ItemCount sendInfo={e=>e} max={3}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
                   <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Ketchup</div>
-                  <ItemCount />
+                  <ItemCount sendInfo={e=>e} max={3}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
                   <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Mostaza</div>
-                  <ItemCount />
+                  <ItemCount sendInfo={e=>e} max={3}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
                   <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Ají</div>
-                  <ItemCount />
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
-                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Salsa BBQ + $ 1.00</div>
-                  <ItemCount />
+                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Salsa BBQ</div>
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
-                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Salsa Stacker + S/ 1.00</div>
-                  <ItemCount />
+                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Salsa Stacker</div>
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
               </Accordion.Body>
             </Accordion.Item>
@@ -98,31 +98,31 @@ export const AccordionDetail = () => {
               <Accordion.Body className='bg-body-tertiary'>
                 <div className='d-flex flex-row justify-content-between'>
                   <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Pickles</div>
-                  <ItemCount />
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
                   <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Cebolla</div>
-                  <ItemCount />
+                  <ItemCount sendInfo={e=>e} max={2} />
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
                   <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Tomate</div>
-                  <ItemCount />
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
                   <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Lechuga</div>
-                  <ItemCount />
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
-                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Queso Americano + $ 2.00</div>
-                  <ItemCount />
+                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Queso Americano</div>
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
-                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Crispy Onion + $ 2.00</div>
-                  <ItemCount />
+                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Crispy Onion</div>
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
-                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Tocino + $ 2.00</div>
-                  <ItemCount />
+                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Tocino</div>
+                  <ItemCount sendInfo={e=>e} max={2}/>
                 </div>
               </Accordion.Body>
             </Accordion.Item>

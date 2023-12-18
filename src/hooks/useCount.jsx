@@ -13,7 +13,6 @@ export const useCount = (initial, min ,max) => {
     }
     const reset = () =>{
         setCount(initial)
-        
     }
 
     return {decrement, increment, reset, count}
