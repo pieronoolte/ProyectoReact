@@ -4,7 +4,6 @@ import { CartContext } from './CartContext'
 
 const CartProvider = ({ children }) => {
 const [total,setTotal] = useState(0)
-// const [formattedTotal, setFormattedTotal] = useState(30);
 
 
 const initialState = []

@@ -25,7 +25,10 @@ export const CartView = () => {
                             type="button"
                             className='fs-5'
                             variant="danger"
-                            onClick={() => removeShopping(e.id)}
+                            onClick={() => {
+                                
+                                removeShopping(e.id)
+                            console.log(shoppingList)}}
                         >
                             Remove
                         </Button>

@@ -1,0 +1,37 @@
+
+Levantamiento de Observaciones:
+
+- Estructura general del proyecto (scaffolding). (Se mejora la estructura del proyecto agregando clasificación de los componentes)
+
+- Componentes contenedores y de presentación divididos por patrones. ( Se dividen los componentes por tipo: Presentación- dumbComponents y Contenedor-smartComponents)
+
+- Implementación de bases de datos con Firebase. ( Base dedatos implementada Firebase para los productos y las ordenes realizadas)
+
+- Componentes: 
+Navbar - CartWidget - ItemListContainer - ItemList - Item - ItemDetailContainer  - ItemCount - Cart.
+
+(Se cambia el nombre de file jsx "Menu" a "Navbar". el componente se sigue llamando "Menu" ya que se esta importando el comando de React bootstrap "Navbar" y no puedo duplicar nombres)
+
+(ItemCount se desarrolla segun el ejemplo que se encuentra en el material de clase con el "useCount", luego se adapta al requemiento en los componentes ItemDetailContainer, ItemDetail, AccordionDetail y Cart)
+
+(CartWidget llama al contexto para tener la cantidad de items en el carrito como lo solicitan)
+
+(Item  desarrolla la presentación de cada producto e ItemList desglosa los productos segun la categoria o todos los productos)
+
+(ItemListContainer utiliza los componentes Item, ItemList y los hooks useParams, useProduct y useState)
+
+(ItemDetailContainer utiliza ItemDetail. ITemdetail llama al contexto para tener la funcion de agregar al carrito)
+
+(se agrega el componente Cartview en el componente Cart. Se coloca la lista de compras en Cartview, este componente utiliza el contexto, se llama al ShoppingList y removeShopping)
+
+(Se utiliza useProduct para filtrar los productos segun la categoria o id, esto a su vez se anexa a los componentes ItemDetailContainer e ItemListContainer que utilizan Useparams. Este hook utiliza logica condicional para que pueda ser utilizado para ambos componentes y ser reutilizable)
+
+- Funcionalidad al seleccionar categoría de productos. ( La funcionalidad de seleccionar categoría se visualiza en la barra de navegación segun categoría con useParams)
+
+- Funcionalidad al agregar productos al carrito de compras. ( la funcionalidad de agregar pedidos al carrito se visualiza en el componente ItemDetail)
+
+- Formulario de contacto y envío de información a la Base de Datos. ( El formulario se realizó con React Bootstrap con condicional de relleno de dato y luego los datos de la orden se envía a la base de datos de Firebase
+
+- Funcionalidad de edición de productos en el carrito de compras. (Se agregó el props {max=10} en el Itemcount del componente CartView, se puede remover y adicionar cantidad)
+
+- Readme con información de tu e-commerce. (Se agregó información del proyecto)

@@ -12,9 +12,8 @@ export const CartWidget = () => {
     const [count, setCount] = useState(0)
 
     useEffect(() => {
-        if (shoppingList.length > 0) {
-            setCount(shoppingList.length)
-        }
+        setCount(shoppingList.length)
+        
         console.log("hola")
         console.log(count)
     }, [shoppingList,count])

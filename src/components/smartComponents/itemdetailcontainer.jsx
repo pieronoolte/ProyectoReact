@@ -7,7 +7,6 @@ import { useElement } from '../../hooks/useElement';
 import { Loading } from '../dumbComponents/loading';
 import { ItemDetail } from './ItemDetail';
 
-
 export const ItemDetailContainer = () => {
 
   const { id } = useParams()
