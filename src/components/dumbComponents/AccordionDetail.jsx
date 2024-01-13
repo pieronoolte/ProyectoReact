@@ -1,7 +1,7 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
-import { ItemCount } from './ItemCount'
+import { ItemCount } from '../smartComponents/ItemCount'
 
 
 export const AccordionDetail = () => {
@@ -130,16 +130,16 @@ export const AccordionDetail = () => {
               <Accordion.Header>¿Se te antoja algo más?</Accordion.Header>
               <Accordion.Body className='bg-body-tertiary'>
                 <div className='d-flex flex-row justify-content-between'>
-                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Pie de Manzana + $ 5.50</div>
-                  <ItemCount />
+                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>Pie de Manzana</div>
+                  <ItemCount sendInfo={e=>e} max={5}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
-                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'> Nuggets x5 + $ 5.90</div>
-                  <ItemCount />
+                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'> Nuggets x5</div>
+                  <ItemCount sendInfo={e=>e} max={5}/>
                 </div>
                 <div className='d-flex flex-row justify-content-between'>
-                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>King Fusion OREO® Vainilla + $ 8.50</div>
-                  <ItemCount />
+                  <div className='text-secondary bg-body-white p-3 text-center fw-bold'>King Fusion OREO® Vainilla</div>
+                  <ItemCount sendInfo={e=>e} max={5}/>
                 </div>
               </Accordion.Body>
             </Accordion.Item>

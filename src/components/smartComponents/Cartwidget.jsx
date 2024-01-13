@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { CartContext } from '../context/CartContext';
+import { CartContext } from '../../context/CartContext';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

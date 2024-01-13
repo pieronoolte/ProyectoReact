@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCount } from '../hooks/useCount'
+import { useCount } from '../../hooks/useCount'
 import Button from 'react-bootstrap/Button';
 
 export const ItemCount = ({sendInfo,max}) => {

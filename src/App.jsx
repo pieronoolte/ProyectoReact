@@ -1,12 +1,9 @@
 import * as React from 'react'
-import { Cart } from './components/Cart'
-import { ItemListContainer } from './components/itemlistcontainer'
-import { ItemDetailContainer } from './components/itemdetailcontainer'
-import { Menu } from './components/Menu'
-
-
-
-import { Logo } from './components/Logo';
+import { Cart } from './components/smartComponents/Cart'
+import { ItemListContainer } from './components/smartComponents/itemlistcontainer'
+import { ItemDetailContainer } from './components/smartComponents/itemdetailcontainer'
+import { Menu } from './components/dumbComponents/Navbar'
+import { Logo } from './components/dumbComponents/Logo';
 import { Routes, Route } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -18,9 +15,6 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import CartProvider from './context/CartProvider';
-
-
-
 
 
 function App() {

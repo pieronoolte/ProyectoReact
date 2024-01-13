@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
+
+
 export const ItemCarousel = ({ dnone }) => {
   const [index, setIndex] = useState(0)
 

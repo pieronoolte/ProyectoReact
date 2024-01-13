@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { ItemCount } from './ItemCount'
-import { useElement } from '../hooks/useElement';
+import { ItemCount } from '../smartComponents/ItemCount'
+import { useElement } from '../../hooks/useElement';
 
 
-export const Item = ({ id, title, price, img, hiddenFirst, hiddenSecond, value=useElement, max}) => {
+export const Item = ({ id, title, price, img, hiddenFirst, hiddenSecond, value, max}) => {
   return (
     <Card id={id} key={id} style={{ width: '18rem', height: '29rem' }}  className='bg-body-tertiary m-4'>
       <Card.Img variant="top" style={{ width: '14rem' }} src={img} />

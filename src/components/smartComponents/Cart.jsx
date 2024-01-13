@@ -1,21 +1,18 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { CartContext } from '../context/CartContext';
 import Button from 'react-bootstrap/Button';
-import { ItemCount } from './ItemCount';
-import { useElement } from '../hooks/useElement';
 import FormGroup from 'react-bootstrap/esm/FormGroup';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import {collection, addDoc } from "firebase/firestore"
-import { Loading } from './loading';
-import { ToastShop } from './toast';
-import {firebase} from '../hooks/useFirebase'
+import { Loading } from '../dumbComponents/loading';
+import { ToastShop } from '../dumbComponents/toast';
+import {firebase} from '../../hooks/useFirebase'
+import { CartView } from './CartView';
 
 export const Cart = () => {
   
-  const { shoppingList, removeShopping } = useContext(CartContext);
-  const { updateElementState, elementStates } = useElement()
+
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -33,8 +30,6 @@ export const Cart = () => {
     return () => clearTimeout(timeoutId);
   }, [])
 
-  const calcularTotal = shoppingList.reduce((total, e) => total + e.total * (elementStates[e.id] || 1.0), 0).toFixed(2)
-  console.log(shoppingList)
 
   const [validated, setValidated] = useState(false);
 
@@ -125,7 +120,6 @@ export const Cart = () => {
                   className='d-flex justify-content-start gap-3'
                 />
               </Form.Group>
-              {/* <Button type="submit">Submit form</Button> */}
               <FormGroup className='d-flex flex-row-reverse'>
                 <Button className="px-4 mt-2 col-md-3" variant="danger" type='submit'>
                   Confirmar Datos
@@ -134,27 +128,7 @@ export const Cart = () => {
             </Form>
             <ToastShop Show={showOne} onclose={() => setShowOne(false)} name="Confirmación de Datos!" />
           </div>
-          <ul className='mt-5'>
-            {shoppingList.map(e => (
-              <li className="list-group d-flex flex-row justify-content-around border m-2 my-2 p-3" key={e.id}>
-                <span className='mt-2'>{e.name}</span>
-                <p className='mt-2'>S{`${(e.total * (elementStates[e.id] || 1.0)).toFixed(2)}`}</p>
-                <ItemCount sendInfo={(newInfo) => updateElementState(e.id, newInfo)} />
-                <Button
-                  type="button"
-                  className='fs-5'
-                  variant="danger"
-                  onClick={() => removeShopping(e.id)}
-                >
-                  Remove
-                </Button>
-              </li>
-            ))}
-          </ul>
-          <div className='d-flex justify-content-end'>
-            <b className='mx-3 fs-1'>Total:</b>
-            <span className='mx-3 fs-1'>${calcularTotal}</span>
-          </div>
+          <CartView/>
           <div className='d-flex flex-row-reverse m-3' >
             <Button className="px-4 mt-2 col-md-3" variant="danger" type='submit' onClick={handleSubmitTwo}>
               Confirmar Compra
@@ -165,6 +139,5 @@ export const Cart = () => {
         </>
       )}
     </>
-
   );
 };
